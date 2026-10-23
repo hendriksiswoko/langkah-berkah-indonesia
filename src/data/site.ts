@@ -67,7 +67,7 @@ export const site = {
   },
 
   seo: {
-    title: "Happy Trip — Your Journey, Our Care.",
+    title: "Happy Trip | Your Journey, Our Care.",
     description:
       "Happy Trip adalah brand perjalanan wisata dari PT Langkah Berkah Indonesia. Family trip, group tour, private trip, corporate trip, tiket & hotel, bantuan visa, dan custom tour ke destinasi populer Asia.",
     ogImage: brandAssets.ogImage,

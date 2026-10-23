@@ -21,7 +21,7 @@ function FeaturedCard({ d, className }: { d: Destination; className: string }) {
       </div>
       <p className="mt-3 max-w-md text-base leading-relaxed text-muted">{d.description}</p>
       <p className="mt-4 text-sm font-medium text-navy-900">
-        {d.cities.map((c) => c.name).join("  ·  ")}
+        {d.cities.map((c) => c.name).join(", ")}
       </p>
       {thumbs.length > 0 ? (
         <ul className="mt-5 grid max-w-md grid-cols-3 gap-2">
@@ -42,7 +42,7 @@ function FeaturedCard({ d, className }: { d: Destination; className: string }) {
 
 function ListedItem({ d }: { d: Destination }) {
   return (
-    <article className="flex flex-col border-t-2 border-navy-900 pt-5">
+    <article className="flex flex-col border-t border-line pt-6">
       {d.image ? (
         <div className="relative mb-5 aspect-[4/3] overflow-hidden rounded-image">
           <Photo image={d.image} sizes="(min-width: 1024px) 30vw, 100vw" />
@@ -55,7 +55,7 @@ function ListedItem({ d }: { d: Destination }) {
       <h3 className="text-2xl font-bold text-navy-900">{d.name}</h3>
       <p className="mt-2 text-sm leading-relaxed text-muted">{d.description}</p>
       <p className="mt-4 text-sm font-medium text-navy-900">
-        {d.cities.map((c) => c.name).join("  ·  ")}
+        {d.cities.map((c) => c.name).join(", ")}
       </p>
       <CtaButton cta={d.cta} variant="link" icon="arrow-right" className="mt-5 self-start" />
     </article>
@@ -101,7 +101,7 @@ export function Destinations({ anchor }: { anchor?: string }) {
           <div className="mt-16 flex flex-col gap-3 border-t border-line pt-6 sm:flex-row sm:items-baseline sm:gap-8">
             <p className="eyebrow text-navy-700">{c.upcomingLabel}</p>
             <p className="text-base font-semibold text-navy-900">
-              {upcoming.map((d) => d.name).join("  ·  ")}
+              {upcoming.map((d) => d.name).join(", ")}
             </p>
             <p className="text-sm text-muted">{c.upcomingNote}</p>
           </div>

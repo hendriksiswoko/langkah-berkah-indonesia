@@ -21,8 +21,10 @@ export function ClosingCta({ anchor }: { anchor?: string }) {
         <p className="mt-6 max-w-md text-lg leading-relaxed text-white/85">{c.subcopy}</p>
         <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
           <CtaButton cta={c.cta} variant="primary" icon="whatsapp" />
-          <p className="text-sm text-white/80">
-            {site.contact.whatsappDisplay} · {site.contact.email}
+          <p className="text-sm leading-relaxed text-white/80">
+            {site.contact.whatsappDisplay}
+            <br />
+            {site.contact.email}
           </p>
         </div>
       </div>

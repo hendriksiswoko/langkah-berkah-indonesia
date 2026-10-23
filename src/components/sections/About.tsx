@@ -36,14 +36,13 @@ export function About({ anchor }: { anchor?: string }) {
             ))}
           </div>
 
-          <div className="mt-10 border-l-4 border-yellow-500 bg-navy-50 py-6 pl-6 pr-6">
+          <div className="mt-10 rounded-image bg-navy-50 p-7">
             <p className="eyebrow text-navy-700">{c.promiseLabel}</p>
             <p className="mt-2 font-heading text-2xl font-bold text-navy-900">{c.promiseTitle}</p>
             <p className="mt-1 text-sm text-muted">{c.promiseText}</p>
-            <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-navy-900">
+            <ul className="mt-5 flex flex-wrap gap-2 text-sm font-semibold text-navy-900">
               {c.promiseItems.map((item) => (
-                <li key={item} className="flex items-center gap-2">
-                  <span aria-hidden="true" className="size-1.5 bg-yellow-500" />
+                <li key={item} className="rounded-full bg-white px-3.5 py-1.5">
                   {item}
                 </li>
               ))}

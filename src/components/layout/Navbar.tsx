@@ -10,9 +10,9 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-white">
+    <header className="site-header sticky top-0 z-50">
       <div className="container-x flex h-16 items-center justify-between">
-        <a href="#top" aria-label={`${site.company.brand} — home`} onClick={() => setOpen(false)}>
+        <a href="#top" aria-label={`${site.company.brand}, home`} onClick={() => setOpen(false)}>
           <Brand />
         </a>
 
@@ -45,7 +45,7 @@ export function Navbar() {
         <nav
           id="mobile-menu"
           aria-label="Mobile"
-          className="border-t border-line bg-white md:hidden"
+          className="site-header-menu md:hidden"
         >
           <ul className="container-x py-2">
             {site.nav.map((item) => (

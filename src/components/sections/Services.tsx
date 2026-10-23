@@ -16,30 +16,31 @@ export function Services({ anchor }: { anchor?: string }) {
             <SectionHeading eyebrow={c.eyebrow} title={c.title} description={c.description} />
             <figure className="relative mt-10 hidden aspect-[4/5] max-w-sm overflow-hidden rounded-image lg:block">
               <Photo image={c.image} sizes="24vw" />
-              <figcaption className="absolute bottom-4 left-4 bg-white px-3 py-1.5 text-xs font-semibold text-navy-900">
+              <figcaption className="absolute bottom-4 left-4 rounded-full bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-navy-900">
                 {c.imageCaption}
               </figcaption>
             </figure>
           </div>
         </div>
 
-        <ol className="lg:col-span-7">
-          {services.map((s, i) => (
+        <ul className="lg:col-span-7">
+          {services.map((s) => (
             <li
               key={s.id}
-              className="grid grid-cols-[2.5rem_1fr] gap-x-4 border-t border-line py-7 first:border-t-2 first:border-navy-900 sm:grid-cols-[3.5rem_1fr_auto] sm:gap-x-6"
+              className="grid gap-x-6 gap-y-4 border-b border-line py-7 first:pt-0 sm:grid-cols-[1fr_auto] sm:items-start"
             >
-              <span className="font-heading text-sm font-bold text-navy-700">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <div>
-                <div className="flex items-center gap-3">
-                  <Icon name={s.icon} className="size-5 text-navy-700" />
+              <div className="flex gap-4">
+                <span className="mt-0.5 flex size-10 shrink-0 items-center justify-center rounded-full bg-white text-navy-800">
+                  <Icon name={s.icon} className="size-5" />
+                </span>
+                <div>
                   <h3 className="text-xl font-bold text-navy-900">{s.name}</h3>
+                  <p className="mt-1.5 max-w-lg text-[0.9375rem] leading-relaxed text-muted">
+                    {s.description}
+                  </p>
                 </div>
-                <p className="mt-2 max-w-lg text-sm leading-relaxed text-muted">{s.description}</p>
               </div>
-              <div className="col-start-2 mt-4 sm:col-start-3 sm:mt-1">
+              <div className="pl-14 sm:pl-0 sm:pt-1">
                 <CtaButton
                   cta={
                     s.cta ?? {
@@ -53,7 +54,7 @@ export function Services({ anchor }: { anchor?: string }) {
               </div>
             </li>
           ))}
-        </ol>
+        </ul>
       </div>
     </section>
   );

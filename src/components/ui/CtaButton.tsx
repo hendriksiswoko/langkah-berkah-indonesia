@@ -5,7 +5,7 @@ import { Icon } from "./Icon";
 type Variant = "primary" | "secondary" | "secondary-dark" | "link";
 
 const base =
-  "inline-flex items-center justify-center gap-2 text-sm font-semibold transition-colors duration-200";
+  "inline-flex items-center justify-center gap-2 text-sm font-semibold transition-[color,background-color,border-color,transform] duration-150 ease-out active:scale-[0.97]";
 
 const variants: Record<Variant, string> = {
   primary:

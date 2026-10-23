@@ -7,7 +7,7 @@ import { images } from "@/config/media";
  */
 
 const hero = {
-  eyebrow: "Travel & Tourism · Happy Trip",
+  eyebrow: "Travel & Tourism",
   headline: "Your Journey, Your Story.",
   subcopy:
     "Discover destinations, create meaningful experiences, and enjoy a journey planned around your needs.",

@@ -14,11 +14,8 @@ export function SectionHeading({
   const dark = tone === "dark";
   return (
     <div className={className}>
-      <p className={`eyebrow ${dark ? "text-yellow-400" : "text-navy-700"}`}>
-        <span
-          aria-hidden="true"
-          className="mr-3 inline-block h-0.5 w-6 -translate-y-0.5 bg-yellow-500 align-middle"
-        />
+      <p className={`eyebrow ${dark ? "text-yellow-400" : "text-navy-700"}`}
+>
         {eyebrow}
       </p>
       <h2

@@ -45,8 +45,7 @@ export function Hero({ anchor }: { anchor?: string }) {
               background: `linear-gradient(to top, rgba(11,26,51,${h.overlay}), transparent 45%)`,
             }}
           />
-          <figcaption className="absolute bottom-5 left-6 flex items-center gap-3 text-xs font-medium tracking-wide text-white">
-            <span aria-hidden="true" className="h-0.5 w-6 bg-yellow-500" />
+          <figcaption className="absolute bottom-5 left-6 text-xs font-medium tracking-wide text-white">
             {h.imageCaption}
           </figcaption>
         </figure>

@@ -43,6 +43,46 @@ h2,
 h3 {
   font-family: var(--font-heading-face), ui-sans-serif, system-ui, sans-serif;
   letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+/* Large type gets tighter tracking and leading; small type stays near 0. */
+h1 {
+  letter-spacing: -0.035em;
+}
+h3 {
+  letter-spacing: -0.01em;
+}
+p {
+  text-wrap: pretty;
+}
+
+/* Translucent header: content scrolls underneath. */
+.site-header {
+  background: rgba(255, 255, 255, 0.78);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  box-shadow: 0 1px 0 rgba(20, 27, 41, 0.06);
+}
+.site-header-menu {
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 1px 0 rgba(20, 27, 41, 0.06);
+}
+@media (prefers-reduced-transparency: reduce) {
+  .site-header,
+  .site-header-menu {
+    background: var(--white);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+@media (prefers-contrast: more) {
+  .site-header,
+  .site-header-menu {
+    background: var(--white);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    box-shadow: 0 1px 0 var(--ink);
+  }
 }
 
 .container-x {

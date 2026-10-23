@@ -22,8 +22,8 @@ export const theme = {
   },
   /** Fonts themselves are loaded in src/config/fonts.ts. */
   radius: {
-    ui: "3px",
-    image: "2px",
+    ui: "999px",
+    image: "16px",
   },
   layout: {
     containerMax: "76rem",
