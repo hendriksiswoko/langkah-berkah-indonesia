@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+﻿# Happy Trip — Website
 
-## Getting Started
-
-First, run the development server:
+Landing page for Happy Trip (PT Langkah Berkah Indonesia). Next.js App Router, TypeScript, Tailwind CSS v4.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where to edit
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| What | File |
+|---|---|
+| Company name, tagline, WhatsApp, email, address, Instagram, nav menu, SEO, footer text, WhatsApp message templates | `src/data/site.ts` |
+| Destinations (name, description, cities, photo, order, CTA) | `src/data/destinations.ts` |
+| Services (name, description, icon, order) | `src/data/services.ts` |
+| Headlines, paragraphs, labels and CTAs for every section | `src/data/content.ts` |
+| Colours, radius, container width, section spacing | `src/config/theme.ts` |
+| Fonts | `src/config/fonts.ts` |
+| All images, logo, favicon, OG image | `src/config/media.ts` (files in `public/images`) |
+| Section order and show/hide | `src/config/sections.ts` (`enabled`) |
+| Demo vs production content | `src/config/mode.ts` (`NEXT_PUBLIC_CONTENT_MODE=demo`) |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Adding a destination photo
 
-## Learn More
+1. Put the file in `public/images/destinations/`.
+2. Add an entry to `images` in `src/config/media.ts` (src, alt, width, height).
+3. Set `image: images.yourKey` on the destination in `src/data/destinations.ts`. The card becomes a photo card automatically.
 
-To learn more about Next.js, take a look at the following resources:
+## WhatsApp CTAs
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Every button that has `whatsapp: { ... }` opens `wa.me/<number>` with a message from `src/lib/whatsapp.ts`.
+`whatsapp: { destination: "Japan" }` or `{ service: "Family Trip" }` adds that choice to the message; `{ message: "..." }` overrides it.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Open items
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Official Happy Trip logo not supplied. Header/footer show the brand name as text until `brandAssets.logo` is set.
+- Website domain unconfirmed (profile says `langkahberkahidn.com`, brief says `langkahberkahindonesia.com`). Hidden until `contact.website.show` is `true`.
+- Photos exist for Japan and South Korea only. Other destinations render as text until photos are added.
+- Set `NEXT_PUBLIC_SITE_URL` in production for correct Open Graph URLs.
