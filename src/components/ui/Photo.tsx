@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { ImageAsset } from "@/types";
+import { withBase } from "@/lib/base-path";
 
 /** next/image wrapper that takes an ImageAsset from src/config/media.ts. */
 export function Photo({
@@ -15,7 +16,7 @@ export function Photo({
 }) {
   return (
     <Image
-      src={image.src}
+      src={withBase(image.src)}
       alt={image.alt}
       fill
       sizes={sizes}

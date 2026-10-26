@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { withBase } from "@/lib/base-path";
 import { brandAssets } from "@/config/media";
 import { site } from "@/data/site";
 
@@ -11,7 +12,7 @@ export function Brand({ tone = "dark" }: { tone?: "dark" | "light" }) {
   if (logo) {
     return (
       <Image
-        src={logo.src}
+        src={withBase(logo.src)}
         alt={`${site.company.brand} logo`}
         width={logo.width}
         height={logo.height}

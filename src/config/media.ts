@@ -1,4 +1,5 @@
 import type { ImageAsset } from "@/types";
+import { withBase } from "@/lib/base-path";
 
 /**
  * Every image and brand asset on the site. Files live in /public/images.
@@ -14,8 +15,8 @@ export const brandAssets = {
   logo: undefined as ImageAsset | undefined,
   /** Light version for dark backgrounds (footer). Falls back to `logo`. */
   logoLight: undefined as ImageAsset | undefined,
-  favicon: "/favicon-placeholder.svg",
-  ogImage: "/images/og.jpg",
+  favicon: withBase("/favicon-placeholder.svg"),
+  ogImage: withBase("/images/og.jpg"),
 };
 
 export const images = {
